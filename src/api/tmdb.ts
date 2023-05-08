@@ -7,7 +7,7 @@ const API_BASE = 'https://api.themoviedb.org/3';
 - romance
 */
 
-// Função para mandar o endpoint, ele faz a requisição e pega o resultado para nos mandar
+// Função para mandar o endpoint, ele faz a requisição e pega o resultado para nos mandar!
 
 const basicFetch = async (endpoint: string) => {
   const req = await fetch(`${API_BASE}${endpoint}`);

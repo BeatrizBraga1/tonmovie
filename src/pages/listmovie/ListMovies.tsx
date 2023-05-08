@@ -1,17 +1,25 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
+import { StyleSheet, View} from 'react-native';
 
 //components
 import Navbar from '../../components/navbar/Navbar';
-import MovieDetails from '../../components/moviedetails/MovieDetails';
-import Filter from '../../components/filter/Filter';
+import MoviesRow from '../../components/moviesrow/MoviesRow';
+
+//navigation
+import { StackNavigationProp } from '@react-navigation/stack';
+import { ParamListBase } from '@react-navigation/native';
+
+type ListMoviesScreenNavigationProp = StackNavigationProp<ParamListBase, 'ListMovie'>;
+
+interface ListMoviesProps {
+  navigation: ListMoviesScreenNavigationProp;
+}
 
 
-
-export default function App() {
+export default function ListMovies({ navigation }: ListMoviesProps) {
   return (
     <View style={styles.container}>
-        <Navbar />
-        <MovieDetails />
+        <Navbar navigation={navigation}/>
+        <MoviesRow />
     </View>
   );
 }
@@ -19,6 +27,5 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    
   },
 });
