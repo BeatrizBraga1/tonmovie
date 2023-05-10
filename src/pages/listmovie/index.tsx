@@ -1,8 +1,8 @@
 import { StyleSheet, View} from 'react-native';
 
 //components
-import Navbar from '../../components/navbar/Navbar';
-import MoviesRow from '../../components/moviesrow/MoviesRow';
+import Navbar from '../../components/navbar';
+import MoviesRow from '../../components/moviesrow';
 
 //navigation
 import { StackNavigationProp } from '@react-navigation/stack';

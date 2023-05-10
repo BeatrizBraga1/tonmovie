@@ -30,7 +30,7 @@ export default function Navbar({ navigation, showLogo = true }: NavbarProps) {
         {showLogo ? ( // Renderizar o logo somente se showLogo for true
           <Image
             source={require("../../../assets/logo_ton_movie.png")}
-            style={styles.imglogo}
+            style={styles.imgLogo}
           />
         ) : (
           <TouchableOpacity
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
 
-  imglogo: {
+  imgLogo: {
     marginBottom: 10,
     width: 160,
     height: 60,

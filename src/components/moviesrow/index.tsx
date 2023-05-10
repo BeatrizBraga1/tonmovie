@@ -3,7 +3,7 @@ import { View, StyleSheet, Text, ScrollView } from 'react-native';
 
 //components
 import Tmdb from '../../api/tmdb';
-import MovieDetails from '../moviedetails/MovieDetails';
+import MovieDetails from '../moviedetails';
 
 
 const MoviesRow: React.FC = () => {
@@ -24,13 +24,12 @@ const MoviesRow: React.FC = () => {
         <View style={styles.containerTitle}>
           <Text style={styles.title}>Nossos filmes</Text>
         </View>
-
         {list.map((movie, key) => (
           <View key={key} style={styles.containerTwo}>
             <View style={styles.containerTwoTitle}>
               <Text style={styles.titleMovie}>{movie.title}</Text>
             </View>
-            <MovieDetails title={movie.title} movies={movie.items}/>
+            <MovieDetails movies={movie.items}/>
           </View>
         ))}
       </View>

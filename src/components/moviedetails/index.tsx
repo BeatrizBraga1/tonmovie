@@ -1,30 +1,18 @@
-import {useState} from 'react';
+import React from 'react';
 import { View, StyleSheet, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 
-interface MovieRowProps {
-  title: string;
+import { useGlobalContext } from '../../../context';
+
+interface MovieDetailsProps {
   movies: any;
 }
 
-const MovieDetails: React.FC<MovieRowProps> = ({ movies }) => {
+const MovieDetails: React.FC<MovieDetailsProps> = ({ movies }) => {
+  const { isMovieAdded, handleAddItem } = useGlobalContext();
 
-  //adicionar filme no carrinho
-
-  const [addedMovies, setAddedMovies] = useState<string[]>([]);
-
-  const handleAddItem = (movieId: string) => {
-    setAddedMovies(prevMovies => {
-      if (prevMovies.includes(movieId)) {
-        return prevMovies.filter(id => id !== movieId);
-      } else {
-        return [...prevMovies, movieId];
-      }
-    });
-  };
-
-  const isMovieAdded = (movieId: string) => {
-    return addedMovies.includes(movieId);
+  const handleAddToCart = (movieId: string, posterPath: string, title: string) => {
+    handleAddItem(movieId, posterPath, title);
   };
 
   return (
@@ -43,13 +31,13 @@ const MovieDetails: React.FC<MovieRowProps> = ({ movies }) => {
             <TouchableOpacity 
               activeOpacity={0.6} 
               style={styles.buttonAdd}  
-              onPress={() => handleAddItem(movie.id.toString())}
+              onPress={() => handleAddToCart(movie.id.toString(), movie.poster_path, movie.title)}
             >
-            <AntDesign  
-              name={isMovieAdded(movie.id.toString()) ? 'minuscircleo' : 'pluscircleo'} 
-              size={25}  
-              color={isMovieAdded(movie.id.toString()) ? 'red' : '#35852e'} 
-            />
+              <AntDesign  
+                name={isMovieAdded(movie.id.toString()) ? 'minuscircleo' : 'pluscircleo'} 
+                size={25}  
+                color={isMovieAdded(movie.id.toString()) ? 'red' : '#35852e'} 
+              />
               <Text style={styles.textAdd}>{isMovieAdded(movie.id.toString()) ? 'Remover' : 'Adicionar'}</Text>
             </TouchableOpacity>
           </View>
