@@ -9,6 +9,7 @@
   <li>Carrinho de compras (filmes selecionados)</li>
 </ul>
 <div>
+  <img src="assets/giftonmovie.gif" style="width:290px">
   <img src="assets/tela_inicial_ton_movie.jfif" style="width:300px">
   <img src="assets/tela_lista_de_filmes_ton_movie.jfif" style="width:300px">
   <img src="assets/tela_lista_de_filmes_botao_diferente_ton_movie.jfif" style="width:300px">
