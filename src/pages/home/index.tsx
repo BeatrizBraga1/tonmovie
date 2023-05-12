@@ -7,7 +7,7 @@ import {AntDesign} from '@expo/vector-icons';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { ParamListBase } from '@react-navigation/native';
 
-type HomeScreenNavigationProp = StackNavigationProp<ParamListBase, 'Home'>;
+export type HomeScreenNavigationProp = StackNavigationProp<ParamListBase, 'Home'>;
 
 interface HomeProps {
   navigation: HomeScreenNavigationProp;

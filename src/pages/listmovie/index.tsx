@@ -8,7 +8,7 @@ import MoviesRow from '../../components/moviesrow';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { ParamListBase } from '@react-navigation/native';
 
-type ListMoviesScreenNavigationProp = StackNavigationProp<ParamListBase, 'ListMovie'>;
+export type ListMoviesScreenNavigationProp = StackNavigationProp<ParamListBase, 'ListMovie'>;
 
 interface ListMoviesProps {
   navigation: ListMoviesScreenNavigationProp;

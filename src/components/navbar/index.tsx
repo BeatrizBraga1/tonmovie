@@ -13,21 +13,21 @@ import { AntDesign } from "@expo/vector-icons";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { ParamListBase } from "@react-navigation/native";
 
-type NavbarScreenNavigationProp = StackNavigationProp<ParamListBase, "ListMovie">;
+export type NavbarScreenNavigationProp = StackNavigationProp<ParamListBase, "ListMovie">;
 
 interface NavbarProps {
   navigation: NavbarScreenNavigationProp;
-  showLogo?: boolean; // Adicionando uma propriedade opcional para mostrar o logo
+  showLogo?: boolean; 
 }
 
 // Android ou iOS
-const statusBarHeight = StatusBar.currentHeight ? StatusBar.currentHeight + 22 : 60;
+const statusBarHeight = StatusBar.currentHeight ? StatusBar.currentHeight + 22 : 44;
 
 export default function Navbar({ navigation, showLogo = true }: NavbarProps) {
   return (
     <View style={styles.container}>
       <View style={styles.content}>
-        {showLogo ? ( // Renderizar o logo somente se showLogo for true
+        {showLogo ? ( 
           <Image
             source={require("../../../assets/logo_ton_movie.png")}
             style={styles.imgLogo}

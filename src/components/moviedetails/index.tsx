@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StyleSheet, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 
-import { useGlobalContext } from '../../../context';
+import { useGlobalContext } from '../../context';
 
 interface MovieDetailsProps {
   movies: any;

@@ -1,7 +1,7 @@
-import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
-import { useGlobalContext } from '../../../context';
-import { Movie } from '../../../context';
+import { useGlobalContext } from '../../context';
+import { Movie } from '../../context';
 
 //components
 import Navbar from '../../components/navbar';
@@ -9,7 +9,7 @@ import Navbar from '../../components/navbar';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { ParamListBase } from '@react-navigation/native';
 
-type ShoppingCartScreenNavigationProp = StackNavigationProp<ParamListBase, 'ListMovie'>;
+export type ShoppingCartScreenNavigationProp = StackNavigationProp<ParamListBase, 'ListMovie'>;
 
 interface ShoppingCartProps {
   navigation: ShoppingCartScreenNavigationProp;
@@ -28,15 +28,17 @@ export default function ShoppingCart({ navigation }: ShoppingCartProps) {
       {addedMovies.length > 0 ? (
         <View style={styles.containerList}>
           <Text style={styles.titleCart}>{addedMovies.length} {addedMovies.length === 1 ? 'Produto' : 'Produtos'} adicionado{addedMovies.length === 1 ? '' : 's'}</Text>
-          {addedMovies.map((movie, index) => (
-            <View style={styles.itemContainer} key={index}>
-              <Image source={{ uri: `https://image.tmdb.org/t/p/w300${movie.posterPath}` }} style={styles.image} />
-              <Text style={styles.titleMovie}>{movie.title}</Text>
-              <TouchableOpacity onPress={() => handleRemoveMovie(movie)}>
-                <MaterialIcons name="highlight-remove" size={35} color="#d24646" />
-              </TouchableOpacity>
-            </View>
-          ))}
+          <ScrollView>
+            {addedMovies.map((movie, index) => (
+              <View style={styles.itemContainer} key={index}>
+                <Image source={{ uri: `https://image.tmdb.org/t/p/w300${movie.posterPath}` }} style={styles.image} />
+                <Text style={styles.titleMovie}>{movie.title}</Text>
+                <TouchableOpacity onPress={() => handleRemoveMovie(movie)}>
+                  <MaterialIcons name="highlight-remove" size={35} color="#d24646" />
+                </TouchableOpacity>
+              </View>
+            ))}
+           </ScrollView>
         </View>
       ) : (
         <Text style={styles.titleVazio}>Carrinho de compras vazio</Text>
@@ -84,5 +86,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color:'#0C1D8F',
     fontWeight: '600',
+    maxWidth: 220,
   }
 });

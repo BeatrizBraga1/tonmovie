@@ -3,8 +3,7 @@ import ListMovies from './src/pages/listmovie';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import ShoppingCart from './src/pages/shoppingcart';
-import { GlobalContextProvider } from './context';
-import MovieDetails from './src/components/moviedetails';
+import { GlobalContextProvider } from './src/context';
 
 export default function App() {
   const Stack = createStackNavigator();
@@ -26,11 +25,6 @@ export default function App() {
           <Stack.Screen
             name="ShoppingCart"
             component={ShoppingCart}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen
-            name="MovieDetails"
-            component={MovieDetails}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>
