@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react-native';
 import MoviesRow from '../index';
 
-jest.mock('../../api/Tmdb', () => ({
+jest.mock('../../api/tmdb', () => ({
   getHomeList: jest.fn().mockResolvedValue([
     {
       slug: 'action',
