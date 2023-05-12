@@ -8,7 +8,13 @@
   <li>Lista de filmes</li>
   <li>Carrinho de compras (filmes selecionados)</li>
 </ul>
-(print das telas)
+<div>
+  <img src="assets/tela_inicial_ton_movie">
+  <img src="assets/tela_lista_de_filmes_ton_movie">
+  <img src="assets/tela_lista_de_filmes_botao_diferente_ton_movie">
+  <img src="assets/tela_carrinho_de_compras_ton_movie">
+  <img src="assets/tela_carrinho_de_compras_vazio_ton_movie">
+</div>
 
 
 --------------------------------------------------------------------------------------------------------------
