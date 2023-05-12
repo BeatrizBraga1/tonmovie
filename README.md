@@ -9,11 +9,11 @@
   <li>Carrinho de compras (filmes selecionados)</li>
 </ul>
 <div>
-  <img src="assets/tela_inicial_ton_movie">
-  <img src="assets/tela_lista_de_filmes_ton_movie">
-  <img src="assets/tela_lista_de_filmes_botao_diferente_ton_movie">
-  <img src="assets/tela_carrinho_de_compras_ton_movie">
-  <img src="assets/tela_carrinho_de_compras_vazio_ton_movie">
+  <img src="assets/tela_inicial_ton_movie.jfif" style="width:300px">
+  <img src="assets/tela_lista_de_filmes_ton_movie.jfif" style="width:300px">
+  <img src="assets/tela_lista_de_filmes_botao_diferente_ton_movie.jfif" style="width:300px">
+  <img src="assets/tela_carrinho_de_compras_ton_movie.jfif" style="width:300px">
+  <img src="assets/tela_carrinho_de_compras_vazio_ton_movie.jfif" style="width:300px">
 </div>
 
 
@@ -83,7 +83,7 @@ O site para achar diversos ícones é: https://icons.expo.fyi/<br>
 
 <p>Definição do tipo de dados Movie: É definido um tipo Movie que possui as propriedades id, posterPath e title. É usada para tipar os dados relacionados a filmes.</p>
 <p>Definição do tipo GlobalContextValue: É definido um tipo GlobalContextValue que especifica a estrutura dos dados e das funções do contexto global. É usado para tipar o valor fornecido pelo contexto.</p>
-<p>Criação do contexto global: É criado o contexto global utilizando createContext do React. O valor inicial do contexto é definido como undefined, mas depois é substituído.</p>
+<p>Criação do contexto global: É criado o contexto global utilizando createContext do React.</p>
 <p>Componente GlobalContextProvider: É criado um componente GlobalContextProvider que fornece o valor do contexto para seus componentes filhos. Esse componente recebe as propriedades children (ReactNode), que representam os componentes filhos que serão envolvidos pelo contexto.</p>
 <p>Estado e funções do contexto: Dentro do GlobalContextProvider, são definidos o estado addedMovies (array de Movie) e as funções isMovieAdded, handleAddItem e removeMovieFromCart que manipulam esse estado.</p>
 <ul>
